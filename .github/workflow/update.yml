@@ -3,7 +3,7 @@ name: Generate Table of Contents
 on:
   push:
     branches:
-      - '**' # Trigger on push to any branch
+      - '**' 
 
 jobs:
   generate-toc:
@@ -16,6 +16,4 @@ jobs:
     - name: Generate TOC
       uses: actions/markdown-toc@v1
       with:
-        # Optional: Provide additional configurations here if needed
-        # Example: file_glob: "docs/**/*.md"
-        # By default, it will process all markdown files in the repo
+       
