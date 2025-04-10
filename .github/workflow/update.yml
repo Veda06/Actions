@@ -3,7 +3,7 @@ name: Generate Table of Contents
 on:
   push:
     branches:
-      - '**' 
+      - '**'
 
 jobs:
   generate-toc:
@@ -16,4 +16,4 @@ jobs:
     - name: Generate TOC
       uses: actions/markdown-toc@v1
       with:
-       
+     
