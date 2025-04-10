@@ -1,0 +1,18 @@
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  generate-toc:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate Table of Contents
+        uses: technote-space/toc-generator@v4
+        with:
+          TARGET_PATHS: 'docs/**/*.md'
+          COMMIT_MESSAGE: 'docs: auto-generate TOC'
