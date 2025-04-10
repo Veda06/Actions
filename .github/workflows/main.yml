@@ -1,18 +1,19 @@
-name: Genertae TOC
 
-on:
-  push:
-    branches:
-      - '**'
-  jobs:
-    build:
-      runs-on: ubuntu-latest
+On:
+  Push:
+    Branches:
+-	‘**’
 
-      steps:
-      -name: Checkout repository
-       uses: actions/checkout@v3
+Jobs:
+  Generate-toc:
+    Runs-on: ubuntu-latest
 
-      -name: Generate TOC in markdown files
-       uses: technote-space/toc-generator@v4
-       with:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    Steps:
+-	Name: Checkout repository
+      Uses: actions/checkout@v3
+
+-	Name: Generate Table of Contents
+      Uses: technote-space/toc-generator@v4
+      With:
+        TARGET_PATHS: ‘docs/**/*.md’
+        COMMIT_MESSAGE: ‘docs: auto-generate TOC’
