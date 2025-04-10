@@ -1,0 +1,18 @@
+name: Genertae TOC
+
+on:
+  push:
+    branches:
+      - '**'
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+
+      steps:
+      -name: Checkout repository
+       uses: actions/checkout@v3
+
+      -name: Generate TOC in markdown files
+       uses: technote-space/toc-generator@v4
+       with:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
